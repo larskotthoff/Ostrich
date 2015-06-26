@@ -57,7 +57,7 @@ class LinuxEnvironment(object):
 
     @contextlib.contextmanager
     def provision_browser(self, browser, url):
-        if browser == "google-chrome":
+        if browser == "chromium-browser":
             browser_opts = ["--incognito", "--disable-extensions"]
         elif browser == "firefox":
             browser_opts = ["--private"]
@@ -125,7 +125,7 @@ class OsxEnvironment(object):
         if browser == "safari":
             subprocess.call(["osascript", "utils/stop-safari.scpt"])
         else:
-            browsers = {"google-chrome": "Google Chrome", "firefox": "firefox", "safari": "Safari"}
+            browsers = {"chromium-browser": "Google Chrome", "firefox": "firefox", "safari": "Safari"}
             for p in psutil.get_process_list():
                 if p.name == browsers[browser]:
                     os.kill(p.pid, signal.SIGKILL)
@@ -188,15 +188,15 @@ BENCHMARK_INFO = {
 
 ENVIRONMENTS = {
     "c": ("C", "N/A", lambda b: b.run_native_benchmark()),
-    "asmjs-chrome": ("asmjs", "Chrome", lambda b: b.run_js_benchmark("google-chrome", "asmjs")),
+    "asmjs-chrome": ("asmjs", "Chrome", lambda b: b.run_js_benchmark("chromium-browser", "asmjs")),
     "asmjs-firefox": ("asmjs", "Firefox", lambda b: b.run_js_benchmark("firefox", "asmjs")),
     "asmjs-ie": ("asmjs", "IE", lambda b: b.run_js_benchmark("ie", "asmjs")),
     "asmjs-safari": ("asmjs", "Safari", lambda b: b.run_js_benchmark("safari", "asmjs")),
-    "js-chrome": ("js", "Chrome", lambda b: b.run_js_benchmark("google-chrome")),
+    "js-chrome": ("js", "Chrome", lambda b: b.run_js_benchmark("chromium-browser")),
     "js-firefox": ("js", "Firefox", lambda b: b.run_js_benchmark("firefox")),
     "js-ie": ("js", "IE", lambda b: b.run_js_benchmark("ie")),
     "js-safari": ("js", "Safari", lambda b: b.run_js_benchmark("safari")),
-    "js-nota-chrome": ("js-nota", "Chrome", lambda b: b.run_js_benchmark("google-chrome", "js-nota")),
+    "js-nota-chrome": ("js-nota", "Chrome", lambda b: b.run_js_benchmark("chromium-browser", "js-nota")),
     "js-nota-firefox": ("js-nota", "Firefox", lambda b: b.run_js_benchmark("firefox", "js-nota")),
     "js-nota-ie": ("js-nota", "IE", lambda b: b.run_js_benchmark("ie", "js-nota")),
     "js-nota-safari": ("js-nota", "Safari", lambda b: b.run_js_benchmark("safari", "js-nota")),
