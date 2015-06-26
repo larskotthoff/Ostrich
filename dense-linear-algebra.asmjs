@@ -1,0 +1,6 @@
+var Module = {};
+Module["arguments"] = ['-s', '1024'];
+
+var fs = require('fs');
+eval(fs.readFileSync('common/common_rand.js')+'');
+eval(fs.readFileSync('dense-linear-algebra/lud/build/asmjs/lud.js')+'');

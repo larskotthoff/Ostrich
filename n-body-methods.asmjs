@@ -1,0 +1,6 @@
+var Module = {};
+Module["arguments"] = ['-boxes1d', '6'];
+
+var fs = require('fs');
+eval(fs.readFileSync('common/common_rand.js')+'');
+eval(fs.readFileSync('n-body-methods/lavamd/build/asmjs/lavamd.js')+'');

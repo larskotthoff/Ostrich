@@ -1,0 +1,6 @@
+var Module = {};
+Module["arguments"] = ["3000000"];
+
+var fs = require('fs');
+eval(fs.readFileSync('common/common_rand.js')+'');
+eval(fs.readFileSync('graph-traversal/bfs/build/asmjs/bfs.js')+'');

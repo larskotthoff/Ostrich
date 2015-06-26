@@ -1,0 +1,5 @@
+var Module = {};
+Module["arguments"] = ['-s', '16'];
+
+var fs = require('fs');
+eval(fs.readFileSync('branch-and-bound/nqueens/build/asmjs/nqueens.js')+'');

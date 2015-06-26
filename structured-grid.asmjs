@@ -1,0 +1,7 @@
+var fs = require('fs');
+eval(fs.readFileSync('structured-grid/SRAD/build/js/data.js')+'');
+
+var Module = {};
+Module["arguments"] = ['500', '1'].concat(data);
+
+eval(fs.readFileSync('structured-grid/SRAD/build/asmjs/srad.js')+'');

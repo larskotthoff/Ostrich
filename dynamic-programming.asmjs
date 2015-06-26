@@ -1,0 +1,6 @@
+var Module = {};
+Module["arguments"] = ['-n', '4096', '-g', '1'];
+
+var fs = require('fs');
+eval(fs.readFileSync('common/common_rand.js')+'');
+eval(fs.readFileSync('dynamic-programming/nw/build/asmjs/needle.js')+'');

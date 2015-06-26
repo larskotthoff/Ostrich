@@ -1,0 +1,5 @@
+var Module = {};
+Module["arguments"] = ['-v', 'n', '-n', '512'];
+
+var fs = require('fs');
+eval(fs.readFileSync('graphical-models/hmm/build/asmjs/hmm.js')+'');

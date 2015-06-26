@@ -1,0 +1,6 @@
+var Module = {};
+Module["arguments"] = ['-n', '5000', '-i', '10', '-t', '0.00000001', '-q', '100000'];
+
+var fs = require('fs');
+eval(fs.readFileSync('common/common_rand.js')+'');
+eval(fs.readFileSync('map-reduce/page-rank/build/asmjs/pagerank.js')+'');

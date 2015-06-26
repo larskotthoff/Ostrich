@@ -1,0 +1,6 @@
+var Module = {};
+Module["arguments"] = ['-n', '128', '-s', '65536', '-r', '150'];
+
+var fs = require('fs');
+eval(fs.readFileSync('common/common_rand.js')+'');
+eval(fs.readFileSync('combinational-logic/crc/build/asmjs/crc.js')+'');

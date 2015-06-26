@@ -1,0 +1,6 @@
+var Module = {};
+Module["arguments"] = ['-n', 50000, '-s', 0.01, '-d', 2000, '-i', 100];
+
+var fs = require('fs');
+eval(fs.readFileSync('common/common_rand.js')+'');
+eval(fs.readFileSync('sparse-linear-algebra/spmv/build/asmjs/spmv.js')+'');

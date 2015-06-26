@@ -1,0 +1,6 @@
+var Module = {};
+Module["arguments"] = ['10'];
+
+var fs = require('fs');
+eval(fs.readFileSync('common/common_rand.js')+'');
+eval(fs.readFileSync('spectral-methods/fft/build/asmjs/fft.js')+'');

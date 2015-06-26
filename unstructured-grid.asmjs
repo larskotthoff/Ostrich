@@ -1,0 +1,6 @@
+var Module = {};
+Module["arguments"] = [['2850000']];
+
+var fs = require('fs');
+eval(fs.readFileSync('common/common_rand.js')+'');
+eval(fs.readFileSync('unstructured-grid/back-propagation/build/asmjs/backprop.js')+'');
